@@ -1,0 +1,21 @@
+@model Kullanici
+
+<div class="container mt-5">
+    <div class="card mx-auto shadow" style="max-width: 500px;">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Kullanıcı Detayları</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><strong>Adı:</strong> @Model.KullaniciAdi</p>
+            <p class="card-text"><strong>Soyadı:</strong> @Model.KullaniciSoyadi</p>
+            <p class="card-text"><strong>Yaş:</strong> @Model.KullaniciYas</p>
+            <p class="card-text"><strong>Pozisyon:</strong> @Model.KullaniciPozisyon</p>
+            <p class="card-text"><strong>Numara:</strong> @Model.KullaniciNumara</p>
+            <p class="card-text"><strong>Mail:</strong> @Model.KullaniciMail</p>
+        </div>
+        <div class="card-footer text-end">
+            <a asp-action="Index" class="btn btn-primary">Listeye Dön</a>
+        </div>
+        <!-- kullaniciyı detaylariyla gösterir. -->
+    </div>
+</div>

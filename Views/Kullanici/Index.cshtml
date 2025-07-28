@@ -1,0 +1,35 @@
+@model IEnumerable<Kullanici>
+
+<h1>Kullanıcı Listesi</h1>
+<br><br>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Kullanıcı ID</th>
+            <th>Kullanıcı Adı</th>
+            <th>Kullanıcı Soyadı</th>
+            <th>Kullanıcı Pozisyonu</th>
+            <th>Ayarlar</th>
+        </tr>
+    <!-- burada tablo başlıkları yazıldı. başlıkları tek tek elle yazmak yerine veritabanından getirebilirdim ama görüntü açısından hoş durması için bu şekilde elle yazmayı tercih ettim. veritabanından getirseydim yazacağım kod: (a = et olarak düşünün. yazınca hata verdiği için yazamıyorum.)
+    aHtml.DisplayNameFor (k=>k.KullaniciId)
+    şeklinde th etiketleri içerisine eklerdik. -->
+    </thead>
+    <tbody>
+        @foreach (var Kullanici in Model){
+            <tr>
+                <td>@Kullanici.KullaniciId</td>
+                <td>@Kullanici.KullaniciAdi</td>
+                <td>@Kullanici.KullaniciSoyadi</td>
+                <td>@Kullanici.KullaniciPozisyon</td>
+                <td>
+                <!-- burada kullanıcı verilerini verilerini tabanından çekiyoruz. -->
+                    <a asp-controller="Kullanici" asp-action="Details" asp-route-id="@Kullanici.KullaniciId" class="btn btn-warning">Detay</a>
+                    <a asp-controller="Kullanici" asp-action="Edit" asp-route-id="@Kullanici.KullaniciId" class="btn btn-primary">Düzenle</a>
+                    <a asp-controller="Kullanici" asp-action="Delete" asp-route-id="@Kullanici.KullaniciId" class="btn btn-danger">Sil</a>
+                    <!-- burada her kullanıcı için detay, düzenle ve sil butonları oluşturuldu. -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+@model Kullanici
+
+
+<div class="container mt-5">
+    <form asp-action="Delete" method="post">
+        <div class="card mx-auto shadow" style="max-width: 500px;">
+            <div class="card-header bg-primary text-white"><h4>Kullanıcı Silme</h4></div>
+            <div class="card-body">
+                <p><b>@Model.KullaniciAdi @Model.KullaniciSoyadi</b> adlı kişiyi silmek istediğinize emin misiniz?</p>
+                <!-- Kullanıcıyı silmek için onay mesajı -->
+                <p class="text-danger">Bu işlem geri alınamaz!</p>
+                <!-- Silme işlemi geri alınamaz uyarısı -->
+            </div>
+            <div class="card-footer text-end">
+                <input type="hidden" asp-for="@Model.KullaniciId">
+                <!-- Kullanıcı ID'sini gizli input olarak gönderiyoruz -->
+                <button type="submit" class="btn btn-danger">Evet</button>
+                <!-- Evet butonuna tıklayınca silme işlemi gerçekleşir -->
+                <a asp-action="Index" class="btn btn-primary">Hayır</a>
+                <!-- hayıra tıklayınca index sayfasına yönlendirir -->
+            </div>
+        </div>
+    </form>
+</div>
+

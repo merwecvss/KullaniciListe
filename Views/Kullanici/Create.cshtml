@@ -1,0 +1,43 @@
+@model Kullanici
+
+<!-- bu kısım ekstra eklediğim creat actionun view kısmı. -->
+<div class="container mt-5">
+    <form asp-controller="Kullanici" asp-action="Create" method="post">
+    <div class="card mx-auto shadow" style="max-width: 500px;">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Kullanıcı Ekle</h4>
+        </div>
+            <div class="card-body">
+                <input type="hidden" asp-for="KullaniciId">
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Ad</label>
+                    <input asp-for="KullaniciAdi" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Soyad</label>
+                    <input asp-for="KullaniciSoyadi" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Yaş</label>
+                    <input asp-for="KullaniciYas" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Pozisyon</label>
+                    <input asp-for="KullaniciPozisyon" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Numara</label>
+                    <input asp-for="KullaniciNumara" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kullanıcı Mail</label>
+                    <input asp-for="KullaniciMail" class="form-control">
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button class="btn btn-primary" type="Submit">Kaydet</button>
+            </div>
+            <!-- kullaniciyi ekler. -->
+       </div>
+    </form> 
+</div>
